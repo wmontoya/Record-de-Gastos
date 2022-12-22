@@ -1,0 +1,33 @@
+<app-header [Title]="Title"></app-header>
+<div class="card-center">
+    <mat-card class="cardHome">
+        <mat-card-header class="text-center">
+            <mat-card-title>
+                <h3>Definición del Presupuesto</h3>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+            <form (ngSubmit)="enviar()">
+                <mat-form-field appearance="fill" class="width-100">
+                    <mat-label>Presupuesto Disponible</mat-label>
+                    <input matInput [(ngModel)]="monto" [ngModelOptions]="{standalone: true}" type="number">
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill" class="width-100">
+                    <mat-label>Divisa</mat-label>
+                    <mat-select [(ngModel)]="divisa" [ngModelOptions]="{standalone: true}">
+                        <mat-option value="₡">Colones</mat-option>
+                        <mat-option value="$">Dolares</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-card-actions>
+                    <button mat-raised-button type="submit" color="warn">Agregar</button>
+                </mat-card-actions>
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<app-footer class="fixed-bottom"></app-footer>
